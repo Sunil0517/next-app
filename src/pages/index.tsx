@@ -13,8 +13,8 @@ const Home: React.FC = () => {
     <div className='container'>
       <h1 className="text-4xl font-bold text-left text-blue-400">Twitter</h1>
       <User />
-      {/* <button className='create hover'>Create</button> */}
-      {/* <Post /> */}
+
+      <button  className='create mt-5' onClick={()=>window.open('./createUser')}> Create New User</button>
     </div>
   );
 };
