@@ -1,13 +1,37 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { useEffect , useState } from 'react';
+
+interface PostItem {
+  name: string;
+  password: string;
+}
 
 
-const App: React.FC = () => {
+const App: FC = () => {
+
+  const [user, setUser] = useState<any[]>([]);
+
+    useEffect(() => {
+    fetch('http://localhost:3003/users')
+      .then((response) => response.json())
+      .then(setUser);
+    }, []);
+
   return (
-    <div className='container mx-auto'>
-        <div className='flex justify-center'>
-            <h2 className="text-4xl  text-center text-white-900 ">user</h2>
-
-        </div>
+    
+    <div className="container mx-auto">
+      <h2 className="text-4xl text-center text-white">User</h2>
+      <div className="mt-4 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {user.map((user: PostItem, index: number) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-lg p-4"
+          >
+            <h3 className="text-xl font-semibold mb-2 text-black">{user.name}</h3>
+            <p className="text-gray-600">{user.password}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

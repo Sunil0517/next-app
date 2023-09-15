@@ -32,7 +32,7 @@ body {
   border-radius: 0.5rem;
   border-width: .1cm;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  border-color: rgb(237, 176, 95);
-  
+  padding: 0.5rem;
+  border-color: rgb(237, 176, 95); 
 }
+
