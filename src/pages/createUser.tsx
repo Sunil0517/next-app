@@ -11,7 +11,7 @@ export default function Page() {
               const name = e.currentTarget.name.value
               const email = e.currentTarget.email.value;
               const password = e.currentTarget.password.value;
-              fetch('http://localhost:3003/users', {
+              fetch('http://localhost:3004/users', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

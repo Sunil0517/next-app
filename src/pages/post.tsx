@@ -40,7 +40,7 @@ const Post: React.FC = () => {
   const [tweet, setTweet] = useState<any[]>([]);
 
     useEffect(() => {
-    fetch('http://localhost:3003/tweets')
+    fetch('http://localhost:3004/tweets')
       .then((response) => response.json())
       .then(setTweet);
     }, []);

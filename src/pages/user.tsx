@@ -12,14 +12,16 @@ const App: FC = () => {
   const [user, setUser] = useState<any[]>([]);
 
     useEffect(() => {
-    fetch('http://localhost:3003/users')
+    fetch('http://localhost:3004/users')
       .then((response) => response.json())
-      .then(setUser);
+      .then((json) => {
+        setUser(json);
+      });
     }, []);
 
   return (
     
-    <div className="container mx-auto">
+    <div className="container  mx-auto m-auto justify-center">
       <h2 className="text-4xl text-center text-white">User</h2>
       <div className="mt-4 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {user.map((user: PostItem, index: number) => (
